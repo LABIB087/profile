@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<style>
+  body {
+    height: 130vh;
+  }
+
+  img {
+    width: 82px;
+    height: 100%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    mix-blend-mode: color-burn;
+    margin: 15px 20px;
+  }
+
+  img:hover {
+    opacity: 1;
+  }
+
+  .image {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+
+  }
+
+  .gallery {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 10px;
+  }
+  .fullimg{
+    text-align: center;
+  }
+  .full{
+    width: 320px;
+  }
+
+  .i {
+    opacity: 0.6;
+  }
+</style>
+
+
+<body>
+  <audio id="music">
+    <source src="gallery.mp3">
+  </audio>
+
+  <div class="gallery">
+    <div class="image">
+
+      <img src="img4.jpg" alt="img4.jpg" onclick="myfunction(this)" class="i">
+
+      <img src="img5.jpg" alt="img4.jpg" onclick="myfunction(this)" class="i">
+
+
+      <img src="img1.jpg" alt="img4.jpg" onclick="myfunction(this)" class="i">
+
+      <img src="img2.jpg" alt="img4.jpg" onclick="myfunction(this)" class="i">
+
+
+      <img src="img3.jpg" alt="img4.jpg" onclick="myfunction(this)" class="i">
+
+      <img src="img6.jpg" alt="img4.jpg" onclick="myfunction(this)" class="i">
+
+    </div>
+
+
+  </div>
+  <div class="fullimg">
+    <img src="img4.jpg" alt="img4.jpg" id="full" class="full">
+  </div>
+  <div class="hidden" id="music_weav">
+    <div class="loading">
+      <div class="loa"></div>
+      <div class="loa"></div>
+      <div class="loa"></div>
+      <div class="loa"></div>
+      <div class="loa"></div>
+      <div class="loa"></div>
+    </div>
+  </div>
+</body>
+<script>
+  var music = document.getElementById('music');
+  var music_weav = document.getElementById('music_weav');
+
+  window.addEventListener('click', function() {
+    //  music.src = 'bg-music.mp3';
+    music.play();
+    music_weav.classList.remove('hidden');
+
+  });
+
+
+  function myfunction(smallImg) {
+
+    var fullImg = document.getElementById('full');
+
+    fullImg.src = smallImg.src;
+
+  }
+</script>
+
+</html>
